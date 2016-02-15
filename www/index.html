@@ -41,11 +41,13 @@
           Show all 
         </div>
         <ion-list>
-          <ion-checkbox ng-model="item.completed" ng-repeat="item in list | filter:toShow()" ng-click="saveData(item)">{{item.task}}</ion-checkbox>
+          <ion-checkbox ng-model="item.completed" ng-repeat="item in list | filter:toShow()" ng-change="saveData(item)">{{item.task}}</ion-checkbox>
 
         </ion-list>
         <label class="item item-input">
-          <input type="text" placeholder="Next item" ng-model="newTask" ng-blur="addItem(newTask); newTask = '';">
+          <form ng-sumbit="addItem(newTask); newTask = '';">
+            <input type="text" placeholder="Next item" ng-model="newTask" ng-blur="addItem(newTask); newTask = '';"  >
+          </form>
         </label>
       </ion-content>
     </ion-pane>

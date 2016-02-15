@@ -39,12 +39,12 @@ app.run(function($ionicPlatform) {
             return {"completed":false};
         }
 
-        //Sync it with firebase
+        //Add a new task to firebase
         $scope.addItem = function(task){
           $scope.list.$add({"task": task, "completed": false});
         };
 
-        //Add a new task to firebase
+        //Sync it with firebase
         $scope.saveData = function(item){
           $scope.list.$save(item);
         }
